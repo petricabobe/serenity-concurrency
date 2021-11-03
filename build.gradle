@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'net.serenity-bdd:serenity-core:2.3.2'
+    implementation 'net.serenity-bdd:serenity-junit:2.3.2'
+    implementation 'ch.qos.logback:logback-classic:1.2.6'
+}
+
+test {
+    // Show test results.
+    testLogging {
+        showStandardStreams = true
+        showStackTraces = true
+        exceptionFormat = 'full'
+        events 'failed'
+    }
+}
